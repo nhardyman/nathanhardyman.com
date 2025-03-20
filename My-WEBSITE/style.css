@@ -1,0 +1,319 @@
+
+/* General Styles */
+* {
+    box-sizing: border-box;         /* Ensures consistent sizing */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    min-height: 100vh;             /* Full viewport height */
+}
+
+/* Sidebar Layout */
+.sidebar {
+    position: fixed;               /* Keeps the sidebar static */
+    top: 0;
+    left: 0;
+    width: 260px;                  /* Consistent sidebar width */
+    height: 100vh;                 /* Full height */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;           /* Center horizontally */
+    padding: 20px 0;               /* Top and bottom padding only */
+    z-index: 10;
+}
+
+/* Logo Styling */
+.sidebar .logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;           /* Space between logo and nav links */
+    padding-left: 10px;            /* Padding from the left */
+}
+
+/* Navigation Styling */
+.sidebar nav {
+    display: flex;
+    flex-direction: column;        /* Stack links vertically */
+    align-items: center;           /* Center links horizontally */
+    gap: 15px;                     /* Space between links */
+}
+
+/* Navigation Link Styling */
+.sidebar nav a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    padding: 5px 0;
+}
+
+.sidebar nav a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Footer inside the Sidebar */
+.sidebar-footer {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+/* ============================== */
+/* Gallery Section with Masonry Layout */
+.gallery {
+    margin-left: 280px;                /* Space for the sidebar */
+    margin-right: 20px;
+    margin-top: 20px;
+    display:block;
+    column-count: 3;                   /* Number of masonry columns */
+    column-gap: 20px;                  /* Spacing between columns */
+}
+
+/* Gallery Items */
+.gallery-item {
+    display: flex;
+    flex-direction: column;      /* Stack image and caption vertically */
+    align-items: center;         /* Center the content */
+    transition: margin-bottom 0.3s;  /* Smooth shift effect */
+}
+
+/* Gallery Item Styling */
+.gallery-item figure {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    position: relative;          /* Needed for absolute positioning */
+    overflow: hidden;            /* Hide caption overflow */
+}
+
+.gallery-item img {
+    width: 100%;              
+    height: auto;              /* Maintain aspect ratio */
+    max-width: 100%;           /* Ensure it scales properly */
+}
+
+/* Hover Effect */
+.gallery-item img:hover {
+    transform: scale(1.00);
+    margin-bottom: 0px;
+}
+
+/* Hover Effect - Show Caption Beneath */
+.gallery-item:hover figcaption {
+    opacity: 1;                    /* Make caption visible */
+    max-height: 60px;              /* Expand height */
+}
+
+/* Caption Styling - Hidden by Default */
+figcaption {
+    color: #000;                  /* Black text */
+    font-size: 14px;
+    text-align: center;
+    font-style: italic;
+    opacity: 0;                    /* Initially hidden */
+    max-height: 0;                 /* Collapsed by default */
+    overflow: hidden;              /* Hide until expanded */
+    transition: opacity 0.3s, max-height 0.3s;  /* Smooth reveal */
+    margin-bottom: 10px;
+}
+
+
+/* ============================== */
+/* Contact Page Styling */ß
+/* Desktop Layout */
+.container {
+    display: flex;
+    min-height: 100vh;                  /* Full viewport height */
+    padding-left: 0px;                /* Compensate for the sidebar width */
+}
+
+/* Contact Section */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;                /* Center horizontally */
+    justify-content: center;            /* Center vertically */
+    min-height: 100vh;                  /* Full viewport height */
+    text-align: center;
+    max-width: 1200px;                  /* Consistent width */
+    margin: 0px auto;                     /* Center horizontally */
+    padding: 20px;
+}
+
+.contact img {
+    max-width: 35%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.contact a {
+    color: #333;                 /* Email link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact a:hover {
+    color: #333;                 /* Hover color */
+    text-decoration: underline;
+}
+
+/* ============================== */
+/* Mobile Header (for mobile only) */
+.mobile-header {
+    display: none;                       /* Hidden by default on desktop */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Mobile Logo */
+.mobile-logo {
+    height: 50px;
+    width: auto;
+}
+
+/* Mobile Menu Button */
+.menu-button {
+    font-family: 'Times New Roman', Times, serif;
+    display: none;                       /* Hidden by default on desktop */
+    background: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer ;
+    border-radius: 4px;
+}
+
+.menu-button:hover {
+    text-decoration: underline;
+
+}
+
+/* ============================== */
+/* Responsive Layout Breakpoints */
+
+/* Wide Desktop Layout: 3 Columns */
+@media screen and (min-width: 1200px) {
+    .gallery {
+        margin-left: 280px;                /* Space for the sidebar */
+        margin-right: 20px;
+        margin-top: 20px;
+        column-count: 3;                   /* Number of masonry columns */
+        column-gap: 20px;                  /* Spacing between columns */
+    }
+
+    .mobile-logo,.mobile-header {
+        display: none;
+    }
+}
+
+/* Standard Desktop Layout: 2 Columns */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .gallery {
+        margin-left: 280px;                /* Space for the sidebar */
+        margin-right: 20px;
+        margin-top: 20px;
+        column-count: 2;                   /* Number of masonry columns */
+        column-gap: 20px;                  /* Spacing between columns */
+    }
+    
+
+    .mobile-logo, .mobile-header {
+        display: none;
+    }
+}
+
+/* Mobile Layout: 1 Column */
+@media screen and (max-width: 767px) {
+    .gallery {
+        margin-left: 20px;                /* Space for the sidebar */
+        margin-right: 20px;
+        margin-top: 20px;
+        column-count: 1;                   /* Number of masonry columns */
+        column-gap: 20px;                  /* Spacing between columns */
+    }
+    
+    
+    /* Show Mobile Header */
+    .mobile-header {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;                  /* Show menu button on mobile */
+    }
+
+    /* Hide Sidebar on Mobile */
+    .sidebar {
+        display: none;
+    }
+
+    /* Display Sidebar when menu button is clicked */
+    .sidebar.visible {
+        display: flex;
+        position: fixed;
+        top: 60px;                       /* Below the header */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: #fff;
+        z-index: 20;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sidebar .logo {
+        display: none;
+    }
+
+    /* Navigation Link Styling */
+    .sidebar nav a {
+        display: block;
+        color: #333;
+        text-decoration: none;
+        font-size: 24px;
+        transition: color 0.3s;
+        padding: 10px 0;
+    }
+
+    /* Contact Centering */
+    .contact {
+        min-height: calc(100vh - 60px);  /* Take full height minus header */
+        margin: 0 20px;
+        justify-content: center;         /* Center vertically */
+        text-align: center;
+    }
+}
