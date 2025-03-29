@@ -64,6 +64,47 @@ body {
     text-decoration: underline;
 }
 
+/* ============================== */
+/* Text-to-Icon Hover Effect for Navigation */
+
+/* Updated Nav Links */
+.sidebar nav a {
+    display: inline-flex;                      /* Align text and icon horizontally */
+    align-items: center;                       /* Center vertically */
+    justify-content: center;                   /* Center horizontally */
+    text-decoration: none;
+    color: #333;
+    width: 200px;                               
+    font-size: 18px;
+    transition: color 0.0s, opacity 0.0s;      /* Smooth transition */
+    position: relative;                        /* Needed for icon positioning */
+    overflow: hidden;                          /* Hide icon until hover */
+}
+
+/* Text Style */
+.sidebar nav .link-text {
+    transition: opacity 0.0s;                  /* Smooth fade effect */
+}
+
+/* Icon Style */
+.sidebar nav .nav-icon {
+    position: absolute;                        /* Overlay icon on text */
+    opacity: 0;                                /* Hidden by default */
+    width: 40px;                               /* Icon size */
+    height: auto;
+    transition: opacity 0.0s, transform 0.0s;  /* Smooth reveal and scale */
+}
+
+/* Hover Effect */
+.sidebar nav a:hover .link-text {
+    opacity: 0;                                /* Hide text on hover */
+}
+
+.sidebar nav a:hover .nav-icon {
+    opacity: 1;                                /* Reveal icon on hover */
+    transform: scale(1);                     /* Slight growing effect */
+}
+
 /* Footer inside the Sidebar */
 .sidebar-footer {
     width: 100%;
@@ -295,6 +336,8 @@ figcaption {
         justify-content: center;
     }
 
+    
+
     .sidebar .logo {
         display: none;
     }
@@ -307,7 +350,43 @@ figcaption {
         font-size: 24px;
         transition: color 0.3s;
         padding: 10px 0;
+        align-items: center;              /* Center-align the nav links */
+        text-align: center;               /* Ensure text is centered */
+        width: 100%;
+
     }
+
+    /* Expand the nav container to fill height */
+    .sidebar nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;               /* Center horizontally */
+        justify-content: center;           /* Center vertically */
+        gap: 20px;                         /* Add space between links */
+        width: 100%;
+        height: 100%;                      /* Make nav fill the sidebar */
+    }
+    
+    .sidebar nav .nav-icon {
+        display: none !important;         /* Completely hide the icons */
+    }
+
+    /* Ensure the text stays visible */
+    .sidebar nav .link-text {
+        opacity: 1;                       /* Always show the text */
+    }
+
+    /* Remove hover effects entirely on mobile */
+    .sidebar nav a:hover .link-text {
+        opacity: 1;                       /* Keep text visible on hover */
+    }
+
+    .sidebar nav a:hover .nav-icon {
+        display: none;                    /* Ensure icon doesn't appear on hover */
+    }
+
+
+    
 
     /* Contact Centering */
     .contact {
