@@ -175,7 +175,7 @@ figcaption {
     max-height: 0;                 /* Collapsed by default */
     overflow: hidden;              /* Hide until expanded */
     transition: opacity 0.3s, max-height 0.3s;  /* Smooth reveal */
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 /* MODAL EXPLORATIONS*/
 body {
@@ -214,7 +214,7 @@ body {
 
 .modal-footer {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -229,14 +229,14 @@ body {
     font-size: 1rem;
     text-align: center;
     font-style: italic;
-    margin-bottom: 10px; /* Reduce space between caption and nav */
+    margin-bottom: 0px; /* Reduce space between caption and nav */
 }
 
 
 .modal-nav {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Control spacing between PREV and NEXT */
+    gap: 30px; /* Control spacing between PREV and NEXT */
     margin-top: 10px; /* Adjust space between caption and navigation */
 }
 
