@@ -13,7 +13,9 @@
     <a href="index.html">
         <img src="images/Logo2.png" alt="Nathan Hardyman Logo2" class="mobile-logo">
     </a>
-    <button class="menu-button" aria-label="Open Menu">Menu</button>
+    <button class="menu-button" aria-label="Open Menu">
+        <img src="images/menu.png" alt="Menu" class="menu-icon">
+    </button>
 </header>
 
 <div class="container">
@@ -59,81 +61,98 @@
     <main class="gallery">
         <div class="gallery-item">
             <figure>
-                <img src="images/midnitediner.jpg" alt="Artwork 1">
+                <img src="images/midnitediner.jpg" alt="Artwork 1" onclick="openModal(0)">
                 <figcaption>Midnite Diner ~ Personal</figcaption>
             </figure>
         </div>
 
         <div class="gallery-item">
             <figure>
-                <img src="images/catstickers.jpg" alt="Artwork 2">
+                <img src="images/catstickers.jpg" alt="Artwork 2" onclick="openModal(1)">
                 <figcaption>Gatos ~ Personal</figcaption>
             </figure>
         </div>
 
         <div class="gallery-item">
             <figure>
-                <img src="images/woodmage.jpg" alt="Artwork 3">
+                <img src="images/woodmage.jpg" alt="Artwork 3" onclick="openModal(2)">
                 <figcaption>Wood Mage ~ Personal</figcaption>
             </figure>
         </div>
 
         <div class="gallery-item">
             <figure>
-                <img src="images/organmeister.jpg" alt="Artwork 4">
+                <img src="images/organmeister.jpg" alt="Artwork 4" onclick="openModal(3)">
                 <figcaption>Organ Meister ~ Personal</figcaption>
             </figure>
         </div>
 
         <div class="gallery-item">
             <figure>
-                <img src="images/cosmictoad.jpg" alt="Artwork 5">
+                <img src="images/cosmictoad.jpg" alt="Artwork 5" onclick="openModal(4)">
                 <figcaption>Cosmic Toad ~ Harpers</figcaption>
             </figure>
         </div>
 
         <div class="gallery-item">
             <figure>
-                <img src="images/skittleboys.jpg" alt="Artwork 6">
+                <img src="images/skittleboys.jpg" alt="Artwork 6" onclick="openModal(5)">
                 <figcaption>Skittle Boys ~ Personal</figcaption>
             </figure>
         </div>
 
         <div class="gallery-item">
             <figure>
-                <img src="images/mindyshirt.jpg" alt="Artwork 7">
+                <img src="images/mindyshirt.jpg" alt="Artwork 7" onclick="openModal(6)">
                 <figcaption>Telephone Tee ~ Mindy Gledhill</figcaption>
             </figure>
         </div>
 
         <div class="gallery-item">
             <figure>
-                <img src="images/gobgolf.jpg" alt="Artwork 8">
+                <img src="images/gobgolf.jpg" alt="Artwork 8" onclick="openModal(7)">
                 <figcaption>Gob Golf ~ Personal</figcaption>
             </figure>
         </div>
 
         <div class="gallery-item">
             <figure>
-                <img src="images/Queenadilla.jpg" alt="Artwork 9">
+                <img src="images/Queenadilla.jpg" alt="Artwork 9" onclick="openModal(8)">
                 <figcaption>Vampire Shirt ~ Queenadilla</figcaption>
             </figure>
         </div>
 
         <div class="gallery-item">
             <figure>
-                <img src="images/age.PNG" alt="Artwork 10">
+                <img src="images/age.PNG" alt="Artwork 10" onclick="openModal(9)">
                 <figcaption>Time Traveler ~ Personal</figcaption>
             </figure>
         </div>
 
         <div class="gallery-item">
             <figure>
-                <img src="images/walker.jpg" alt="Artwork 10">
+                <img src="images/walker.jpg" alt="Artwork 11" onclick="openModal(10)">
                 <figcaption>Walker ~ Personal</figcaption>
             </figure>
         </div>
         
+
+<!-- MODAL --> 
+<div class="modal" id="imageModal">
+    <!-- Close Button -->
+    <span class="close" id="closeModal">&times;</span>
+
+    <!-- Modal Image -->
+    <img id="modalImage" src="" alt="">
+
+    <div class="modal-footer">
+        <p class="caption" id="modalCaption"></p>
+        <div class="modal-nav">
+            <span class="nav prev" id="prevImage">PREV</span>
+            <span class="nav next" id="nextImage">NEXT</span>
+        </div>
+    </div>
+</div>
 
     </main>
     </div>

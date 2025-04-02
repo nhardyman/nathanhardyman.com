@@ -15,6 +15,7 @@ body {
 /* Container Layout */
 .container {
     display: flex;
+    width: 100%;
     min-height: 100vh;             /* Full viewport height */
 }
 
@@ -118,12 +119,14 @@ body {
 /* ============================== */
 /* Gallery Section with Masonry Layout */
 .gallery {
-    margin-left: 280px;                /* Space for the sidebar */
+    margin-left: 260px;                /* Space for the sidebar */
     margin-right: 20px;
     margin-top: 20px;
     display:block;
     column-count: 3;                   /* Number of masonry columns */
     column-gap: 20px;                  /* Spacing between columns */
+    width: fit-content;
+    max-width: 1200px;
 }
 
 /* Gallery Items */
@@ -134,9 +137,14 @@ body {
     transition: margin-bottom 0.3s;  /* Smooth shift effect */
 }
 
+/* Hide figcaption in gallery view */
+.gallery-item figcaption {
+    display: none;
+}
+
 /* Gallery Item Styling */
 .gallery-item figure {
-    margin: 0;
+    margin-bottom: 15px;
     text-align: center;
     width: 100%;
     position: relative;          /* Needed for absolute positioning */
@@ -153,13 +161,9 @@ body {
 .gallery-item img:hover {
     transform: scale(1.00);
     margin-bottom: 0px;
+    cursor: pointer;
 }
 
-/* Hover Effect - Show Caption Beneath */
-.gallery-item:hover figcaption {
-    opacity: 1;                    /* Make caption visible */
-    max-height: 60px;              /* Expand height */
-}
 
 /* Caption Styling - Hidden by Default */
 figcaption {
@@ -173,6 +177,87 @@ figcaption {
     transition: opacity 0.3s, max-height 0.3s;  /* Smooth reveal */
     margin-bottom: 10px;
 }
+/* MODAL EXPLORATIONS*/
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    padding: 40px 0;
+}
+.modal img {
+    max-width: 80%;
+    max-height: 80%;
+}
+.modal .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align */
+}
+
+.caption {
+    color: #333;
+    font-size: 1rem;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 10px; /* Reduce space between caption and nav */
+}
+
+
+.modal-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Control spacing between PREV and NEXT */
+    margin-top: 10px; /* Adjust space between caption and navigation */
+}
+
+
+.nav {
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight:bold;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    cursor: pointer;
+}
 
 
 /* ============================== */
@@ -180,25 +265,28 @@ figcaption {
 /* Desktop Layout */
 .container {
     display: flex;
-    min-height: 100vh;                  /* Full viewport height */
-    padding-left: 0px;                /* Compensate for the sidebar width */
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 20px; /* Space on both sides */
 }
+
+
 
 /* Contact Section */
 .contact {
+    flex-grow: 1; /* Takes up all available space */
     display: flex;
     flex-direction: column;
-    align-items: center;                /* Center horizontally */
-    justify-content: center;            /* Center vertically */
-    min-height: 100vh;                  /* Full viewport height */
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    max-width: 1200px;                  /* Consistent width */
-    margin: 0px auto;                     /* Center horizontally */
-    padding: 20px;
+    max-width: 600px; /* Prevents it from stretching too wide */
+    margin: auto; /* Ensures it's centered properly */
 }
 
+
 .contact img {
-    max-width: 35%;
+    max-width: 50%;
     height: auto;
     margin-bottom: 20px;
 }
@@ -245,16 +333,17 @@ figcaption {
 }
 
 /* Mobile Menu Button */
-.menu-button {
-    font-family: 'Times New Roman', Times, serif;
-    display: none;                       /* Hidden by default on desktop */
-    background: #fff;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    font-size: 24px;
-    cursor: pointer ;
-    border-radius: 4px;
+    .menu-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+.menu-button img {
+    width: 75px;  /* Adjust size as needed */
+    height: auto;
+    transition: opacity 0.3s;
 }
 
 .menu-button:hover {
@@ -386,13 +475,4 @@ figcaption {
     }
 
 
-    
-
-    /* Contact Centering */
-    .contact {
-        min-height: calc(100vh - 60px);  /* Take full height minus header */
-        margin: 0 20px;
-        justify-content: center;         /* Center vertically */
-        text-align: center;
-    }
 }
